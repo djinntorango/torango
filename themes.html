@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Themes</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="images/oillamp(powderblue).svg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/oillamp(powderblue).svg" type="image/x-icon">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YX7V8W0R5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9YX7V8W0R5');
+</script>  
+</head>
+  <body>
+    <header class="desktop-header">
+        <a class="header-left" href="index">
+            <img class="logo-image" src="images/oillamp(powderblue).svg" alt="Your Logo">
+            <span>
+                Torango.io
+            </span>    
+        </a>
+        <div class="header-right"> 
+            <nav class="menu">
+                <ul>
+                    <li><a href="themes">Themes</a></li>
+                    <li><a href="add-ons">Add-ons</a></li>
+                    <li><a href="pricing">Pricing</a></li>
+                    <li><a href="https://app.torango.io">Log in</a></li>
+                </ul>
+            </nav>
+        </div>    
+        </header>
+        <!-- Mobile Header -->
+    <header class="mobile-header">
+        <a class="header-left" href="index">
+            <img class="logo-image" src="images/oillamp(powderblue).svg" alt="Your Logo">
+            <span>
+                Torango.io
+            </span>
+        </a>
+        <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="mobile-overlay-menu" id="mobileOverlayMenu">
+            <div class="close-icon" onclick="toggleMobileMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>        
+            <nav class="side-menu">
+                <ul>
+                    <li><a href="themes">Themes</a></li>
+                    <li><a href="add-ons">Add-ons</a></li>
+                    <li><a href="pricing">Pricing</a></li>
+                    <li><a href="https://app.torango.io">Log in</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="welcome">
+                <h1 class="welcome-title">Customizable themes - No coding required</h1>
+                <p class="welcome-body">All of our themes are fully customizable - no coding necessary!</p>
+                <a href="#scrollTarget" class="contact-button">Browse</a>
+            </div>
+            <img class="hero-image" src="images/themes-hero.png"></img>
+        </div>
+        <section class="theme-card" id="#scrollTarget">
+            <div class="theme-left">
+                <div class="theme-info">
+                    <h1>Eidolic</h1>
+                    <ul>
+                        <li>Categories in the header</li>
+                        <li>Category icons</li>
+                        <li>Switch between block and list view</li>
+                    </ul>
+                </div>
+                <div class="theme-buttons">
+                    <a class="contact-button" href="https://eidolic.torango.io" target="_blank">Demo</a>
+                    <a class="purchase-button" href="https://www.zendesk.com/marketplace/themes/259/eidolic/?queryID=1c548d219a84493876e32f789986e0a9" target="_blank">Purchase</a>
+                </div>
+            </div>
+            <div class="theme-right">
+                <img class="theme-img" src="images/eidolic_hero.jpg"></img>
+            </div>
+        </section>
+        <section class="theme-card" id="#scrollTarget">
+            <div class="theme-left">
+                <div class="theme-info">
+                    <h1>Aitvaric</h1>
+                    <ul>
+                        <li>Side-panel navigation</li>
+                        <li>Dark mode</li>
+                        <li>Table of contents</li>
+                    </ul>
+                </div>
+                <div class="theme-buttons">
+                    <a class="contact-button" href="https://aitvaric.torango.io" target="_blank">Demo</a>
+                    <a class="purchase-button" href="https://www.zendesk.com/marketplace/themes/257/aitvaric/?queryID=593861d3a1057279af89ac25a45b3ba8" target="_blank">Purchase</a>
+                </div>
+            </div>
+            <div class="theme-right">
+                <img class="theme-img" src="images/aitvaric_hero.jpg"></img>
+            </div>
+        </section>
+        <section class="theme-card">
+            <div class="theme-left">
+                <div class="theme-info">
+                    <h1>Mandrake</h1>
+                    <ul>
+                        <li>Category icons</li>
+                        <li>Dark mode</li>
+                        <li>Accordion blocks</li>
+                    </ul>
+                </div>
+                <div class="theme-buttons">
+                    <a class="contact-button" href="https://mandrake.torango.io" target="_blank">Demo</a>
+                    <a class="purchase-button" href="https://www.zendesk.com/marketplace/themes/255/mandrake/?queryID=8a9ca8218c0c22e2fc5530739ed16ee6" target="_blank">Purchase</a>
+                </div>
+            </div>
+            <div class="theme-right">
+                <img class="theme-img" src="images/mandrake_hero.jpg"></img>
+            </div>
+        </section>
+        <section class="subscribe">
+            <div class="subscribe-fill">
+                <h1>Sign Up</h1>
+                <p>We don’t send out emails often, but when we do you won’t want to miss them! Sign up with your email to receive updates to themes, apps, and add-ons.</p>
+                <div id="mc_embed_signup">
+                    <form class="subscribe-form" action="https://torango.us21.list-manage.com/subscribe/post?u=f1e48729a13477bed491b0238&amp;id=ad6fca7414&amp;f_id=00adfbe6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+                            <div class="mc-field-group">
+                            <input type="email" placeholder="Enter your email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                            </div>
+                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                <input type="text" name="b_f1e48729a13477bed491b0238_ad6fca7414" tabindex="-1" value="">
+                            </div>
+                            <div class="clear foot">
+                                <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-left">
+          <a class="footer-logo" href="index"> 
+            <img class="logo-image" src="images/oillamp(powderblue).svg" alt="Your Logo">
+            <span>Torango.io</span>
+          </a>
+            <span>® 2023 Torango.io All rights reserved</span>
+        </div>
+        <div class="footer-right">
+            <div class="footer-group">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="themes">Themes</a></li>
+                    <li><a href="services">Services</a></li>
+                    <li><a href="add-ons">Add-ons</a></li>
+                </ul>
+            </div>
+            <div class="footer-group">
+                <h3>Privacy</h3>
+                <ul>
+                    <li><a href="privacy-policy">Privacy Policy</a></li>
+                    <li><a href="terms-and-conditions">Terms & Conditions</a></li>
+                    <li><a href="mailto:djinn@torango.io">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+  </body>
+  <script src="scripts/main.js"></script>
+</html>

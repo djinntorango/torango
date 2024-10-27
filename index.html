@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Torango</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YX7V8W0R5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9YX7V8W0R5');
+</script>
+  </head>
+  <body>
+    <header class="desktop-header">
+        <a class="header-left" href="index">
+            <img class="logo-image" src="images/oillamp(powderblue).svg" alt="Your Logo">
+            <span>
+                Torango.io
+            </span>    
+        </a>
+        <div class="header-right"> 
+            <nav class="menu">
+                <ul>
+                    <li><a href="themes">Themes</a></li>
+                    <li><a href="add-ons">Add-ons</a></li>
+                    <li><a href="pricing">Pricing</a></li>
+                    <li><a href="https://app.torango.io">Log in</a></li>
+                </ul>
+            </nav>
+        </div>    
+        </header>
+        <!-- Mobile Header -->
+    <header class="mobile-header">
+        <a class="header-left" href="index">
+            <img class="logo-image" src="images/oillamp(powderblue).svg" alt="Your Logo">
+            <span>
+                Torango.io
+            </span>
+        </a>
+        <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="mobile-overlay-menu" id="mobileOverlayMenu">
+            <div class="close-icon" onclick="toggleMobileMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>        
+            <nav class="side-menu">
+                <ul>
+                    <li><a href="themes">Themes</a></li>
+                    <li><a href="add-ons">Add-ons</a></li>
+                    <li><a href="pricing">Pricing</a></li>
+                    <li><a href="https://app.torango.io">Log in</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+          <div class="hero">
+            <div class="welcome">
+                <h1 class="welcome-title">Help center designs & AI-powered knowledge base automations</h1>
+                <p class="welcome-body">Browse our Zendesk themes, or contact us now to get started on your custom help center.</p>
+            </div>
+        </div>
+        <section class="token-usage">
+            <div class="token-grid">
+                <div class="token-card">
+                    <div class="token-icon">✍️</div>
+                    <h3>Draft New Articles with AI</h3>
+                    <p class="token-cost">5 tokens</p>
+                </div>
+                <div class="token-card">
+                    <div class="token-icon">🔄</div>
+                    <h3>Revise with AI</h3>
+                    <p class="token-cost">5 tokens</p>
+                </div>
+                <div class="token-card">
+                    <div class="token-icon">🎨</div>
+                    <h3>Set Writing Style</h3>
+                    <p class="token-cost">Free</p>
+                </div>
+                <div class="token-card">
+                    <div class="token-icon">📤</div>
+                    <h3>Export Knowledge Base</h3>
+                    <p class="token-cost">25 tokens</p>
+                </div>
+                <div class="token-card">
+                    <div class="token-icon">🔗</div>
+                    <h3>Add Uniform Hyperlinks in Bulk</h3>
+                    <p class="token-cost">25 tokens</p>
+                </div>
+                <div class="token-card">
+                    <div class="token-icon">🌐</div>
+                    <h3>Translate Entire Knowledge Base</h3>
+                    <p class="token-cost">500 tokens</p>
+                </div>
+            </div>
+        </section>
+        <div class="btn-container welcome-cta">
+            <a href="https://app.torango.io" class="contact-button">Get Started</a>
+            </div>
+        <div class="prod-demo">
+            <h2>AI + Automations</h2>
+            <p>Torango.io brings OpenAI to your help center</p>
+            <div class="tab-menu">
+                <button class="tab-link active" onclick="openTab(event, 'Revise')">Revise</button>
+                <button class="tab-link" onclick="openTab(event, 'Style')">Style</button>
+                <button class="tab-link" onclick="openTab(event, 'Bulk Translate')">Bulk Translate</button>
+            </div>
+            <div id="Revise" class="tab-content active">
+                <div class="prod-info">
+                <h3>Revise</h3>
+                <p>Revise your articles with OpenAI.</p>
+                <ol>
+                    <li>Select an article to revise</li>
+                    <li>Enter a prompt and click Submit</li>
+                    <li>Save as a draft or publish</li>
+                </ol>
+                </div>
+                <video class="demo-vid" width="100%" autoplay loop muted>
+                    <source src="/videos/Revise.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div id="Style" class="tab-content">
+                <div class="prod-info">
+                <h3>Style</h3>
+                <p>Generate content in your style.</p>
+                <ol>
+                    <li>Set your preferred style and tone</li>
+                    <li>Enter preferred vocabulary</li>
+                    <li>Add custom instructions</li>
+                    <li>Save your style settings</li>
+                </ol>
+                </div>
+                <video class="demo-vid" width="100%" autoplay loop muted>
+                    <source src="/videos/Style.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div id="Bulk Translate" class="tab-content">
+                <div class="prod-info">
+                <h3>Bulk Translate</h3>
+                <p>Translate your entire help center with a few clicks.</p>
+                <ol>
+                    <li>Select a language</li>
+                    <li>Choose to save as drafts or publish</li>
+                    <li>Apply translations</li>
+                </ol>
+                </div>
+                <video class="demo-vid" width="100%" autoplay loop muted>
+                    <source src="/videos/Translate.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        
+        <section class="callouts">
+            <div class="callout">
+                <div class="callout-text">
+                    <h2>Knowledge Base Automations</h2>
+                    <ul class="callout-list">
+                        <li>Draft & revise articles with AI</li>
+                        <li>Align to your brand guidelines</li>
+                        <li>Replace keywords and add hyperlinks</li>
+                    </ul>
+                </div>
+                <img class="callout-image" src="images/callout-1.png"></img>
+            </div>
+            <div class="callout">
+                <img class="callout-image" src="images/callout-2.png"></img>
+                <div class="callout-text">
+                    <h2>Zendesk Themes</h2>
+                    <ul class="callout-list">
+                        <li>Easy to customize</li>
+                        <li>Multi-language support</li>
+                        <li>Features galore</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="subscribe">
+            <div class="subscribe-fill">
+                <h1>Sign Up</h1>
+                <p>We don’t send out emails often, but when we do you won’t want to miss them! Sign up with your email to receive updates to themes, apps, and add-ons.</p>
+                <div id="mc_embed_signup">
+                    <form class="subscribe-form" action="https://torango.us21.list-manage.com/subscribe/post?u=f1e48729a13477bed491b0238&amp;id=ad6fca7414&amp;f_id=00adfbe6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+                            <div class="mc-field-group">
+                            <input type="email" placeholder="Enter your email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                            </div>
+                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                <input type="text" name="b_f1e48729a13477bed491b0238_ad6fca7414" tabindex="-1" value="">
+                            </div>
+                            <div class="clear foot">
+                                <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-left">
+          <a class="footer-logo" href="index"> 
+            <img class="logo-image" src="images/oillamp(powderblue).svg" alt="Your Logo">
+            <span>Torango.io</span>
+          </a>
+            <span>® 2023 Torango.io All rights reserved</span>
+        </div>
+        <div class="footer-right">
+            <div class="footer-group">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="themes">Themes</a></li>
+                    <li><a href="services">Services</a></li>
+                    <li><a href="add-ons">Add-ons</a></li>
+                </ul>
+            </div>
+            <div class="footer-group">
+                <h3>Privacy</h3>
+                <ul>
+                    <li><a href="privacy-policy">Privacy Policy</a></li>
+                    <li><a href="terms-and-conditions">Terms & Conditions</a></li>
+                    <li><a href="mailto:djinn@torango.io">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+  </body>
+  <script src="scripts/main.js"></script>
+  <script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+
+    // Hide all tab content
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+    }
+
+    tablinks = document.getElementsByClassName("tab-link");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+</script>
+</html>

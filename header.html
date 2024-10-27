@@ -1,0 +1,47 @@
+    <header class="desktop-header">
+        <a class="header-left" href="index">
+            <img class="logo-image" src="images/oillamp(powderblue).svg" alt="Your Logo">
+            <span>
+                Torango.io
+            </span>    
+        </a>
+        <div class="header-right"> 
+            <nav class="menu">
+                <ul>
+                    <li><a href="themes">Themes</a></li>
+                    <li><a href="add-ons">Add-ons</a></li>
+                    <li><a href="export_articles">Article Exporter</a></li>
+                </ul>
+            </nav>
+        </div>    
+        </header>
+        <!-- Mobile Header -->
+    <header class="mobile-header">
+        <a class="header-left" href="index">
+            <img class="logo-image" src="images/oillamp(powderblue).svg" alt="Your Logo">
+            <span>
+                Torango.io
+            </span>
+        </a>
+        <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="mobile-overlay-menu" id="mobileOverlayMenu">
+            <div class="close-icon" onclick="toggleMobileMenu()">
+                <!-- Replace the following SVG code with your own X icon SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>        
+            <nav class="side-menu">
+                <ul>
+                    <li><a href="themes">Themes</a></li>
+                    <li><a href="add-ons">Add-ons</a></li>
+                    <li><a href="export_articles">Article Exporter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- Load the Google Sign-In client library -->
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <link rel="icon" href="https://cdn.glitch.global/887fed5c-3c1b-472d-8fdc-c2a3bad1fe27/oillamp(powderblue).svg?v=1709088268120" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="https://torango-revise.glitch.me/public/styles.css" />
+  <style>
+    .login-main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .login-container h2 {
+      margin-bottom: 20px;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .or-divider {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
+    .or-divider hr {
+      flex: 1;
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 0;
+    }
+    .or-divider span {
+      padding: 0 10px;
+      color: #888;
+    }
+    .g_id_signin {
+      display: flex !important;
+    justify-content: center;
+    margin-bottom: 12px;
+    }
+    #login-submit-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  </style>
+</head>
+<body>
+  <section class="login-main">
+  <div class="login-container">
+    <h1>Login to your account</h1>
+    <!-- Google Sign-In button container -->
+    <div id="g_id_onload"
+         data-client_id="666721593748-rncnklmte2mr4rhu4tc6m704p3muk1n1.apps.googleusercontent.com"
+         data-login_uri="https://torango-revise.glitch.me/login"
+         data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="sign_in_with"
+         data-shape="rectangular"
+         data-logo_alignment="left">
+    </div>
+    <div class="or-divider">
+      <hr><span>Or</span><hr>
+    </div>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <div id="login-submit-container">
+      <a href="https://torango.io/create-account">New user?</a>
+    <button type="submit">Login</button>
+    </div>
+  </div>
+  </section>
+</body>
+</html>

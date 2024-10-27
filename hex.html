@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex Color Evolution</title>
+    <style>
+        .color-box {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 10px;
+            border: 2px solid #000;
+        }
+        .parent-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .parent-color {
+            width: 100px;
+            height: 100px;
+            margin-left: 20px;
+            border: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #fff;
+        }
+        #next-gen-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        #color-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="images/oillamp(powderblue).svg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/oillamp(powderblue).svg" type="image/x-icon">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9YX7V8W0R5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9YX7V8W0R5');
+    </script>
+</head>
+<body>
+    <h1>Hex Color Evolution</h1>
+    <div class="parent-container">
+        <label for="parent1">Parent 1 Hex Color:</label>
+        <input type="text" id="parent1" placeholder="#ff0000" value="#ff0000">
+        <div id="parent1-color" class="parent-color"></div>
+    </div>
+    <div class="parent-container">
+        <label for="parent2">Parent 2 Hex Color:</label>
+        <input type="text" id="parent2" placeholder="#00ff00" value="#00ff00">
+        <div id="parent2-color" class="parent-color"></div>
+    </div>
+    <button id="next-gen-btn">Generate Next Generation</button>
+    <div id="color-container"></div>
+    
+    <script>
+        let currentGeneration = [];
+
+        function hexToRgb(hex) {
+            hex = hex.replace('#', '');
+            return [
+                parseInt(hex.substring(0, 2), 16),
+                parseInt(hex.substring(2, 4), 16),
+                parseInt(hex.substring(4, 6), 16)
+            ];
+        }
+
+        function rgbToHex(rgb) {
+            return '#' + rgb.map(value => {
+                const hex = value.toString(16);
+                return hex.length === 1 ? '0' + hex : hex;
+            }).join('');
+        }
+
+        function crossover(parent1, parent2) {
+            return parent1.map((gene, index) => Math.random() < 0.5 ? gene : parent2[index]);
+        }
+
+        function createOffspring(parent1Hex, parent2Hex) {
+            if (!/^#[0-9A-F]{6}$/i.test(parent1Hex)) {
+                parent1Hex = null;
+            }
+            if (!/^#[0-9A-F]{6}$/i.test(parent2Hex)) {
+                parent2Hex = null;
+            }
+
+            if (!parent1Hex && !parent2Hex) {
+                // If both parents are invalid, return an empty array.
+                return [];
+            }
+
+            const parent1Rgb = parent1Hex ? hexToRgb(parent1Hex) : [0, 0, 0];
+            const parent2Rgb = parent2Hex ? hexToRgb(parent2Hex) : [0, 0, 0];
+
+            const offspring = [];
+            for (let i = 0; i < 6; i++) {
+                const childRgb = parent1Hex && parent2Hex ? crossover(parent1Rgb, parent2Rgb) : (parent1Hex ? parent1Rgb : parent2Rgb);
+                offspring.push(rgbToHex(childRgb));
+            }
+            return offspring;
+        }
+
+        function displayColors(colors) {
+            const container = document.getElementById('color-container');
+
+            // Create a new row for the current generation
+            const row = document.createElement('div');
+            row.className = 'generation-row';
+            row.style.display = 'flex';
+            row.style.marginTop = '20px';
+
+            colors.forEach(color => {
+                const colorBox = document.createElement('div');
+                colorBox.className = 'color-box';
+                if (color === '#000000' && !colors.includes(color)) {
+                    colorBox.style.backgroundColor = '#000000';
+                    colorBox.style.color = '#fff';
+                    colorBox.textContent = 'NULL';
+                } else {
+                    colorBox.style.backgroundColor = color;
+                }
+                row.appendChild(colorBox);
+            });
+
+            container.appendChild(row);
+        }
+
+        function updateParentColorBoxes() {
+            const parent1Hex = document.getElementById('parent1').value;
+            const parent2Hex = document.getElementById('parent2').value;
+
+            const parent1ColorBox = document.getElementById('parent1-color');
+            const parent2ColorBox = document.getElementById('parent2-color');
+
+            if (/^#[0-9A-F]{6}$/i.test(parent1Hex)) {
+                parent1ColorBox.style.backgroundColor = parent1Hex;
+                parent1ColorBox.textContent = '';
+            } else {
+                parent1ColorBox.style.backgroundColor = '#000000';
+                parent1ColorBox.textContent = 'NULL';
+            }
+
+            if (/^#[0-9A-F]{6}$/i.test(parent2Hex)) {
+                parent2ColorBox.style.backgroundColor = parent2Hex;
+                parent2ColorBox.textContent = '';
+            } else {
+                parent2ColorBox.style.backgroundColor = '#000000';
+                parent2ColorBox.textContent = 'NULL';
+            }
+        }
+
+        function initialize() {
+            document.getElementById('parent1').addEventListener('input', updateParentColorBoxes);
+            document.getElementById('parent2').addEventListener('input', updateParentColorBoxes);
+            updateParentColorBoxes();
+
+            document.getElementById('next-gen-btn').addEventListener('click', nextGeneration);
+        }
+
+        function nextGeneration() {
+            const parent1Hex = document.getElementById('parent1').value;
+            const parent2Hex = document.getElementById('parent2').value;
+
+            if (/^#[0-9A-F]{6}$/i.test(parent1Hex) || /^#[0-9A-F]{6}$/i.test(parent2Hex)) {
+                currentGeneration = createOffspring(parent1Hex, parent2Hex);
+                displayColors(currentGeneration);
+            } else {
+                alert("Invalid hex color format! Please enter at least one valid color in the format #RRGGBB.");
+            }
+        }
+
+        // Initialize the script
+        initialize();
+    </script>
+</body>
+</html>
